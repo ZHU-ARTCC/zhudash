@@ -1,0 +1,11 @@
+WASHINGTON NATIONAL AIRPORT , VA, United States (KDCA) 38-51N 077-02W 18M
+Feb 15, 2017 - 10:52 PM EST / 2017.02.16 0352 UTC
+Wind: from the WNW (290 degrees) at 9 MPH (8 KT):0
+Visibility: 10 mile(s):0
+Sky conditions: mostly cloudy
+Temperature: 37.9 F (3.3 C)
+Dew Point: 16.0 F (-8.9 C)
+Relative Humidity: 40%
+Pressure (altimeter): 29.67 in. Hg (1004 hPa)
+ob: KDCA 160352Z 29008KT 10SM BKN065 03/M09 A2967 RMK AO2 SLP048 T00331089
+cycle: 4

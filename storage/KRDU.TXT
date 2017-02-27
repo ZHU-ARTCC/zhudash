@@ -1,0 +1,11 @@
+RALEIGH-DURHAM INTERNATIONAL  AIRPORT, NC, United States (KRDU) 35-54N 078-46W 130M
+Feb 15, 2017 - 10:51 PM EST / 2017.02.16 0351 UTC
+Wind: Calm:0
+Visibility: 10 mile(s):0
+Sky conditions: clear
+Temperature: 41.0 F (5.0 C)
+Dew Point: 17.1 F (-8.3 C)
+Relative Humidity: 37%
+Pressure (altimeter): 29.74 in. Hg (1007 hPa)
+ob: KRDU 160351Z 00000KT 10SM CLR 05/M08 A2974 RMK AO2 SLP070 T00501083
+cycle: 4

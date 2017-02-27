@@ -1,0 +1,11 @@
+NORFOLK INTERNATIONAL AIRPORT , VA, United States (KORF) 36-54N 076-12W 14M
+Feb 15, 2017 - 10:51 PM EST / 2017.02.16 0351 UTC
+Wind: from the N (350 degrees) at 9 MPH (8 KT) gusting to 16 MPH (14 KT):0
+Visibility: 10 mile(s):0
+Sky conditions: clear
+Temperature: 42.1 F (5.6 C)
+Dew Point: 21.9 F (-5.6 C)
+Relative Humidity: 44%
+Pressure (altimeter): 29.66 in. Hg (1004 hPa)
+ob: KORF 160351Z 35008G14KT 10SM CLR 06/M06 A2966 RMK AO2 SLP043 T00561056
+cycle: 4

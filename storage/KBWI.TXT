@@ -1,0 +1,11 @@
+BALTIMORE-WASHINGTON INTERNATIONAL , MD, United States (KBWI) 39-10N 076-41W 59M
+Feb 15, 2017 - 10:54 PM EST / 2017.02.16 0354 UTC
+Wind: from the W (280 degrees) at 14 MPH (12 KT):0
+Visibility: 10 mile(s):0
+Sky conditions: partly cloudy
+Temperature: 36.0 F (2.2 C)
+Dew Point: 19.9 F (-6.7 C)
+Relative Humidity: 51%
+Pressure (altimeter): 29.63 in. Hg (1003 hPa)
+ob: KBWI 160354Z 28012KT 10SM SCT055 02/M07 A2963 RMK AO2 SLP033 T00221067
+cycle: 4
