@@ -36,6 +36,7 @@
 					@la_input($module, 'f_name')
 					@la_input($module, 'description')
 					@la_input($module, 'file_link')
+					@la_input($module, 'client')
 					@la_input($module, 'user_update')
 					@la_input($module, 'user_time')
 					--}}

@@ -8,7 +8,7 @@
         @if (! Auth::guest())
             <div class="user-panel">
                 <div class="pull-left image">
-                    <img src="https://d30y9cdsu7xlg0.cloudfront.net/png/25204-200.png" class="img-circle" alt="User Image" />
+                    <img src="https://maxcdn.icons8.com/Share/icon/Industry//radar1600.png" class="img-circle" alt="User Image" />
                 </div>
                 <div class="pull-left info">
                     <p>{{ Auth::user()->name }}</p>

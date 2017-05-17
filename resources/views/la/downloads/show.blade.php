@@ -110,6 +110,7 @@
 						@la_display($module, 'f_name')
 						@la_display($module, 'description')
 						@la_display($module, 'file_link')
+						@la_display($module, 'client')
 						@la_display($module, 'user_update')
 						@la_display($module, 'user_time')
 					</div>

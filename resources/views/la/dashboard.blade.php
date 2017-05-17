@@ -10,17 +10,6 @@
             <div class="box box-info">
                 <div class="box-header">
                   Welcome Back, {{Auth::user()->name}}!<br>
-                    @if (Auth::user()->status = 'A')
-                    You are currently an <b>active ZDC controller</b>.
-
-    
-                    @elseif (Auth::user()->status = 'V')
-                    You are currently a <b>visiting controller at ZDC</b>.
-
-                    
-                    @elseif (Auth::user()->status = 'R')
-                    You have <b>been removed from the roster</b>. Please email the ATM for more details.
-                    @endif
                 </div>
 
                 <div class="box-footer clearfix">
@@ -50,15 +39,15 @@
                 <div class="box-header">
                   <h3>Quick Links</h3>
                     <a href="https://www.vatusa.net/exam"><i class="fa fa-pencil" aria-hidden="true"></i> VATUSA Exam Center</a> <br>
-                    <a href="/events"><i class="fa fa-trophy" aria-hidden="true"></i>ZDC Events Home</a> <br>
-                    <a href="https://www.facebook.com/zdc.vatsim/"><i class="fa fa-thumbs-o-up" aria-hidden="true"> ZDC Facebook Page</i></a>    
+                    <a href="/events"><i class="fa fa-trophy" aria-hidden="true"></i> ZHU Events Home</a> <br>
+                    <a href="https://www.facebook.com/virtualZHU/"><i class="fa fa-thumbs-o-up" aria-hidden="true"> ZHU Facebook Page</i></a>    
                 </div>
             </div>
             <div class="box box-info">
                 <div class="box-header">
                   <h3>News</h3><br>
                     <?php
-                    $articles = DB::table('news')->get();
+                    $articles = DB::table('news')->latest()->limit(3)->get();
                     
                     foreach ($articles as $article){
                         echo "<h4><b>$article->title</b></h4>";
@@ -69,6 +58,9 @@
                 </div>
             </div>
             
+            <!-- TS Viewer -->
+            <span id="its907459"><a href="http://www.instantteamspeak.com/">teamspeak</a> Hosting by InstantTeamSpeak.com</span>
+            <script type="text/javascript" src="http://view.light-speed.com/teamspeak3.php?IP=ts.zhuartcc.org&PORT=9987&QUERY=10011&UID=907459&display=block&font=11px&background=transparent&server_info_background=transparent&server_info_text=%23000000&server_name_background=transparent&server_name_text=%23000000&info_background=transparent&channel_background=transparent&channel_text=%23000000&username_background=transparent&username_text=%23000000"></script>
             
             </section><!-- /.Left col -->
             <!-- right col (We are only adding the ID to make the widgets sortable)-->

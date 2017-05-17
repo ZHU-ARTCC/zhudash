@@ -48,15 +48,9 @@
 
 
 <section id="home" name="home"></section>
-<div id="headerwrap">
+<div id="headerwrap" style="background-image: url('http://i1268.photobucket.com/albums/jj580/wguisbond/bg1_zps8xlppt0s.png');">
     <div class="container">
-        <div class="row centered">
-            <div style="padding-right: 250px;"class="col-lg-12">
-                <h1>{{ LAConfigs::getByKey('sitename_part1') }} <b><a>{{ LAConfigs::getByKey('sitename_part2') }}</a></b></h1>
-                <h3>Events</h3>
-                <br><br><br><br><br><br>
-            </div>
-        </div>
+        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     </div> <!--/ .container -->
 </div><!--/ #headerwrap -->
 
@@ -91,6 +85,8 @@
                 @else
                 <a class="btn-new" href="/admin/event_requests">Controller Sign Up (All Events)</a>
                 @endif
+                
+               
             </ul>
 
     </div> <!--/ .container -->

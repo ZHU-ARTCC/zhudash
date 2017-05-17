@@ -31,7 +31,6 @@
 			<div class="col-md-8 col-md-offset-2">
 				{!! Form::model($user, ['route' => [config('laraadmin.adminRoute') . '.users.update', $user->id ], 'method'=>'PUT', 'id' => 'user-edit-form']) !!}
 					@la_form($module)
-					
 					{{--
 					@la_input($module, 'name')
 					@la_input($module, 'email')

@@ -24,7 +24,7 @@ class CreateEventsTable extends Migration
             ["time-start", "Start Time", "Datetime", false, "", 0, 0, true],
             ["time-end", "End Time", "Datetime", false, "", 0, 0, true],
             ["description", "Description", "Textarea", false, "", 0, 0, true],
-            ["positions", "Positions ", "Textarea", false, "", 0, 0, true],
+            ["positions", "Positions ", "Multiselect", false, "", 0, 0, true, "@positions"],
             ["vatusa_link", "VATUSA Forum Link", "String", false, "", 0, 256, true],
             ["active", "Set as active?", "Dropdown", false, "", 0, 0, true, ["Yes","No","Archive"]],
             ["line-up", "Line-Up", "Textarea", false, "No Line-Up has been set yet.", 0, 0, false],

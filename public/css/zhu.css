@@ -1,0 +1,37 @@
+/* 
+CSS for VATSIM Houston ARTCC
+Made by Will Guisbond
+Usage Rights : Will Guisbond, Carson Page and VATSIM vZHU ARTCC
+Date : 03/2017
+*/
+
+@import url('https://fonts.googleapis.com/css?family=Fira+Sans+Condensed');
+
+body {
+    font-family: 'Fira Sans Condensed', sans-serif;
+    color: #6c6d6a;
+    background-color: #EEEEEE;
+}
+
+
+.navbar-static-top{
+    background-color: #A2B9C9;
+    border-color: #A2B9C9;
+}
+
+.panel-heading{
+    background-color: #fff;
+}
+
+.panel{
+    background-color: #f8f8f8;
+}
+
+.navbar-fixed-bottom{
+    background-color: #A2B9C9;
+    border-color: #A2B9C9;
+}
+
+.footer-text{
+    color: #777;
+}

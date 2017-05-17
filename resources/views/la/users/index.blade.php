@@ -24,6 +24,16 @@
     </div>
 @endif
 
+<!-- CID SSO
+<p>First, before adding a new user, use the search function below to grab basic information about them. Then, using this data, add the user to the roster and set their permissions.</p>
+
+<form method="POST">
+    <input type="hidden" name="_token" value="{{ csrf_token() }}">
+    <input type="text" name="id" placeholder="Controller CID"> <input class="btn btn-success btn-sm" type="submit" value="Submit"><br><br>
+</form>
+
+-->
+
 <div class="box box-success">
 	<!--<div class="box-header"></div>-->
 	<div class="box-body">

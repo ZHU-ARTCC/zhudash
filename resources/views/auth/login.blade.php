@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-<body class="hold-transition login-page">
+<body class="hold-transition login-page" style="background-image: url('http://i1268.photobucket.com/albums/jj580/wguisbond/vlad-busuioc-116873%201_zpsodr7edcu.jpg')">
     <div class="login-box">
         <div class="login-logo">
             <a href="{{ url('/home') }}"><b>{{ LAConfigs::getByKey('sitename_part1') }} </b>{{ LAConfigs::getByKey('sitename_part2') }}</a>
@@ -23,7 +23,7 @@
     @endif
 
     <div class="login-box-body">
-    <p class="login-box-msg">Sign in with VATSIM SSO</p>
+    <p class="login-box-msg">Sign in</p>
     <form action="{{ url('/login') }}" method="post">
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
         <div class="form-group has-feedback">
@@ -35,21 +35,15 @@
             <span class="glyphicon glyphicon-lock form-control-feedback"></span>
         </div>
         <div class="row">
-            <div class="col-xs-8">
-                <div class="checkbox icheck">
-                    <label>
-                        <input type="checkbox" name="remember"> Remember Me
-                    </label>
-                </div>
-            </div>
             <div class="col-xs-4">
                 <button type="submit" class="btn btn-primary btn-block btn-flat">Sign In</button>
             </div>
+            <div class="col-xs-6 col-xs-offset-2">
+                <a href="{{ url('/password/reset') }}" class="btn btn-primary btn-block btn-flat">Forgot Password?</a>
+            </div>
         </div>
     </form> 
-<a href="http://login.vatusa.net/uls/login?fac=ZDC">
-    <img src="http://vateg.net/theme/EGvACC/images/vatsim.png" width="100%">
-</a>
+
 </div>
 
 </div>

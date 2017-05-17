@@ -2,15 +2,8 @@
 
 @section("contentheader_title", "Training")
 @section("contentheader_description", "Request a session, view your records and check a session status")
-@section("section", "Training Systems")
-@section("sub_section", "Listing")
+@section("section", "Student Access")
 @section("htmlheader_title", "Training Systems Listing")
-
-@section("headerElems")
-@la_access("Training_Systems", "create")
-	<button class="btn btn-success btn-sm pull-right" data-toggle="modal" data-target="#AddModal">Add Training System</button>
-@endla_access
-@endsection
 
 @section("main-content")
 
@@ -28,16 +21,16 @@
 	<!--<div class="box-header"></div>-->
 	<div class="box-body">
 		<h3>Session Request</h3>
-        {!! Form::open(['action' => 'LA\Training_SystemsController@store', 'id' => 'training_system-add-form']) !!}
+        {!! Form::open(['action' => 'LA\Training_SystemsController@store', 'id' => 'training_system-add-form', 'method' => 'POST']) !!}
+            <input type="hidden" value="{{Auth::user()->email}}" name="email">
             Controller Name: <input name="ctl_name" type="text" readonly value="{{Auth::user()->name}}"><br><br>
             Controller CID: <input name="ctl_cid" type="text" readonly value="{{Auth::user()->cid}}">
             <hr>
             Position: <select name="airport">
-            <option>KBWI</option>
-            <option>KIAD</option>
-            <option>KDCA</option>
-            <option>ZDC</option>
-            <option>Minors</option>
+            <option>KAUS</option>
+            <option>KSAT</option>
+            <option>KIAH</option>
+            <option>ZHU</option>
             </select>
             <select name="position">
             <option>Delivery / Ground</option>
@@ -121,21 +114,39 @@
         <h3>Training Staff - Unbooked Sessions</h3>
         <table class="table">
             <tr>
+                <th>ID</th>
                 <th>Student Name</th>
                 <th>Date</th>
                 <th>Time</th>
                 <th>Position</th>
-                <!-- <th>Action</th> -->
+                <th>Action</th>
             </tr>
             
             <?php 
-                $unbooked = DB::table('training_systems')->where('ctl_cid','=', Auth::user()->cid)->where('mtr_name', '!=','0')->get();
+                $unbooked = DB::table('training_systems')->where('mtr_name', '=','0')->get();
                 foreach ($unbooked as $pickup){
-                    echo "<tr>";
+                    echo "<tr>";?>
+            {!! Form::open(['action' => 'LA\Training_SystemsController@pick', 'id' => 'training_system-pickup-form', 'method' => 'POST']) !!}
+                        <input type="hidden" value="{{$pickup->id}}" name="id">
+                        <input type="hidden" value="{{Auth::user()->email}}" name="email">
+                        <input type="hidden" value="{{$pickup->ctl_name}}" name="ctl_name">
+                        <input type="hidden" value="{{$pickup->idate}}" name="idate">
+                        <input type="hidden" value="{{$pickup->timestartblock}}" name="timestartblock">
+                        <input type="hidden" value="{{$pickup->timeendblock}}" name="timeendblock">
+                        <input type="hidden" value="{{$pickup->airport}}" name="airport">
+                        <input type="hidden" value="{{$pickup->position}}" name="position">
+                        <input type="hidden" value="{{Auth::user()->name}}" name="mtr_name">
+                        
+                    <?php
+                    
+                    echo "<th>$pickup->id</th>";
                     echo "<th>$pickup->ctl_name</th>";
                     echo "<th>$pickup->idate</th>";
                     echo "<th>$pickup->timestartblock to $pickup->timeendblock</th>";
                     echo "<th>$pickup->airport $pickup->position</th>";
+                    ?>
+                    <th>{!! Form::submit( 'Pick-Up', ['class'=>'btn btn-success']) !!}</th>
+            <?php
                     echo "</tr>";
                 }
                 
@@ -160,7 +171,7 @@
             </tr>
             
             <?php 
-                $isbooked = DB::table('training_systems')->where('mtr_name','=', Auth::user()->name)->get();
+                $isbooked = DB::table('training_systems')->where('mtr_name','=', Auth::user()->name)->where('comments','=', '0')->get();
                 foreach ($isbooked as $totrain){
                     echo "<tr>";
                     echo "<th>$totrain->ctl_name</th>";
@@ -194,7 +205,7 @@
                 $records = DB::table('training_systems')->where('ctl_cid','=', Auth::user()->cid)->where('comments', '!=','0')->get();
                 foreach ($records as $record){
                     echo "<tr>";
-                    echo "<th>$record->ctl_name</th>";
+                    echo "<th>$record->mtr_name</th>";
                     echo "<th>$record->idate</th>";
                     echo "<th>$record->timestartblock to $record->timeendblock</th>";
                     echo "<th>$record->airport $record->position</th>";

@@ -64,32 +64,55 @@
             <h3>VRC Client</h3>
                 <div class="well well-lg">
                        <?php    
-             $files = DB::table('downloads')->where('id','=', '1')->get();
+                $files = DB::table('downloads')->where('client', '=', 'VRC')->get();
 
-               foreach($files as $file) {
-                
-                   echo "<a href=$file->file_link>$file->f_name</a>";
-                   echo "<p style=\"float: right;\">Updated $file->user_time</p>";   
-               }
-                ?>  
-            </div>
-            <div class="well well-lg">
-                       <?php    
-             $files1 = DB::table('downloads')->where('id','=', '2')->get();
-
-               foreach($files1 as $file1) {
-                
-                   echo "<a href=$file1->file_link>$file1->f_name</a>";
-                   echo "<p style=\"float: right;\">Updated $file1->user_time</p>";   
-               }
-                ?>  
+                    foreach($files as $file) {
+                        echo "<div class=\"well well-lg\">";
+                            echo "<a href=$file->file>$file->name</a>";
+                            echo "<p style=\"float: right;\">Updated $file->updated_at</p>";   
+                        echo "</div>";
+                    }
+                        ?>  
             </div>
             <h3>vSTARS Client</h3>
-                <div class="well well-lg">...</div>
+                <div class="well well-lg">
+                    <?php    
+                $files1 = DB::table('downloads')->where('client', '=', 'VSTARS')->get();
+
+                    foreach($files1 as $file1) {
+                        echo "<div class=\"well well-lg\">";
+                            echo "<a href=$file1->file>$file1->name</a>";
+                            echo "<p style=\"float: right;\">Updated $file1->updated_at</p>";   
+                        echo "</div>";
+                    }
+                        ?>
+                </div>
             <h3>vERAM Client</h3>
-               <div class="well well-lg">...</div>
+                <div class="well well-lg">
+                    <?php    
+                $files2 = DB::table('downloads')->where('client', '=', 'VERAM')->get();
+
+                    foreach($files2 as $file2) {
+                        echo "<div class=\"well well-lg\">";
+                            echo "<a href=$file2->file>$file2->name</a>";
+                            echo "<p style=\"float: right;\">Updated $file2->updated_at</p>";   
+                        echo "</div>";
+                    }
+                        ?>
+                </div>
             <h3>Miscellaneous</h3>
-                <div class="well well-lg">...</div>
+                <div class="well well-lg">
+                    <?php    
+                $files3 = DB::table('downloads')->where('client', '=', 'MISC')->get();
+
+                    foreach($files3 as $file3) {
+                        echo "<div class=\"well well-lg\">";
+                            echo "<a href=$file3->file>$file3->name</a>";
+                            echo "<p style=\"float: right;\">Updated $file3->updated_at</p>";   
+                        echo "</div>";
+                    }
+                        ?>
+                </div>
     </div> <!--/ .container -->
 </div><!--/ #introwrap -->
 
@@ -103,13 +126,7 @@
 </div><!--/ #features -->
 
 
-<div id="c">
-    <div class="container">
-        <p>
-            The information contained on all pages of this website is to be used for flight simulation purposes only on the VATSIM network. It is not intended nor should it be used for real world navigation.This site is not affiliated with the FAA, the actual Washington Center or any governing aviation body. All content contained herein is approved only for use on the VATSIM network. ©2016 Virtual Washington ARTCC -- Source Code © 2016-2017 W. Guisbond and R. Rump.
-        </p>
-    </div>
-</div>
+@include('footer')
 
 
 <!-- Bootstrap core JavaScript

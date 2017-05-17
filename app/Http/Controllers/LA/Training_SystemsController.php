@@ -16,6 +16,7 @@ use Datatables;
 use Collective\Html\FormFacade as Form;
 use Dwij\Laraadmin\Models\Module;
 use Dwij\Laraadmin\Models\ModuleFields;
+use Mail;
 
 use App\Models\Training_System;
 
@@ -63,9 +64,27 @@ class Training_SystemsController extends Controller
 	 *
 	 * @return \Illuminate\Http\Response
 	 */
-	public function create()
+	public function pick(Request $request, $id)
 	{
-		//
+		$this->validate($request, array(
+            'mtr_name' => 'required',
+
+        ));
+        
+        $session = Training_system::find($id);
+        
+            $session->email = $request->input('email');
+            $session->ctl_name = $request->input('ctl_name');
+            $session->ctl_cid = $request->input('ctl_cid');
+            $session->airport = $request->input('airport');
+            $session->position = $request->input('position');
+            $session->idate = $request->input('idate');
+            $session->timestartblock = $request->input('timestartblock');
+            $session->timeendblock = $request->input('timeendblock');
+            $session->mtr_name = $request->input('mtr_name');
+        
+        $session->save();
+        
 	}
 
 	/**
@@ -84,19 +103,40 @@ class Training_SystemsController extends Controller
         ));
         
         $session = new Training_system;
+          
+            $session->email = $request->email;
+            $session->ctl_name = $request->ctl_name;
+            $session->ctl_cid = $request->ctl_cid;
+            $session->airport = $request->airport;
+            $session->position = $request->position;
+            $session->idate = $request->idate;
+            $session->timestartblock = $request->timestartblock;
+            $session->timeendblock = $request->timeendblock;
             
-        $session->ctl_name = $request->ctl_name;
-        $session->ctl_cid = $request->ctl_cid;
-        $session->airport = $request->airport;
-        $session->position = $request->position;
-        $session->idate = $request->idate;
-        $session->timestartblock = $request->timestartblock;
-        $session->timeendblock = $request->timeendblock;
-        
+  
         $session->save();
         
+        $data = array(
+            'email' => $request->email,
+            'name' => $request->name,
+            'airport' => $request->airport,
+            'position' => $request->position,
+            'date' => $request->idate,
+            'start' => $request->timestartblock,
+            'end' => $request->timeendblock
+        );
+        
+         Mail::send('emails.trainingrequest', $data, function($message) use ($data){
+            $message->from('wguisbond@gmail.com');
+            $message->to($data['email']);
+            $message->subject('Training Request Confirmation');
+        });
+        
         return view('la.training_systems.index');
+
 	}
+    
+    
 
 	/**
 	 * Display the specified training_system.
@@ -250,4 +290,7 @@ class Training_SystemsController extends Controller
 		$out->setData($data);
 		return $out;
 	}
+
+    
+
 }

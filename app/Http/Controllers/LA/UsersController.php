@@ -16,6 +16,7 @@ use Datatables;
 use Collective\Html\FormFacade as Form;
 use Dwij\Laraadmin\Models\Module;
 use Dwij\Laraadmin\Models\ModuleFields;
+use Mail;
 
 use App\Models\User;
 
@@ -84,6 +85,18 @@ class UsersController extends Controller
 			if ($validator->fails()) {
 				return redirect()->back()->withErrors($validator)->withInput();
 			}
+            
+            $data = array(
+            'email' => $request->email,
+            'name' => $request->name,
+            'passph' => $request->password
+        );
+        
+         Mail::send('emails.useradd', $data, function($message) use ($data){
+            $message->from('wguisbond@gmail.com');
+            $message->to($data['email']);
+            $message->subject('Welcome to the Houston ARTCC!');
+        });
 			
 			$insert_id = Module::insert("Users", $request);
 			
@@ -92,6 +105,7 @@ class UsersController extends Controller
 		} else {
 			return redirect(config('laraadmin.adminRoute')."/");
 		}
+        
 	}
 
 	/**
@@ -182,6 +196,7 @@ class UsersController extends Controller
 		} else {
 			return redirect(config('laraadmin.adminRoute')."/");
 		}
+        
 	}
 
 	/**

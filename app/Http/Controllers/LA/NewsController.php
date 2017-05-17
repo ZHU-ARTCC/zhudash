@@ -16,6 +16,7 @@ use Datatables;
 use Collective\Html\FormFacade as Form;
 use Dwij\Laraadmin\Models\Module;
 use Dwij\Laraadmin\Models\ModuleFields;
+use Mail;
 
 use App\Models\News;
 
@@ -84,6 +85,7 @@ class NewsController extends Controller
 			if ($validator->fails()) {
 				return redirect()->back()->withErrors($validator)->withInput();
 			}
+            
 			
 			$insert_id = Module::insert("News", $request);
 			

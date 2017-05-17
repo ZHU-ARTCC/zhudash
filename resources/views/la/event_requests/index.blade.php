@@ -56,6 +56,7 @@
 			{!! Form::open(['action' => 'LA\Event_RequestsController@store', 'id' => 'event_request-add-form']) !!}
 			<div class="modal-body">
 				<div class="box-body">
+                    <input type="hidden" value="{{Auth::user()->email}}" name="email">
                     @la_form($module)
 					
 					{{--
@@ -64,6 +65,7 @@
 					@la_input($module, 'position_request')
 					@la_input($module, 'comments')
 					--}}
+                    
 				</div>
 			</div>
 			<div class="modal-footer">

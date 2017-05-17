@@ -16,6 +16,7 @@ use Datatables;
 use Collective\Html\FormFacade as Form;
 use Dwij\Laraadmin\Models\Module;
 use Dwij\Laraadmin\Models\ModuleFields;
+use Mail;
 
 use App\Models\Event_Request;
 
@@ -85,6 +86,19 @@ class Event_RequestsController extends Controller
 				return redirect()->back()->withErrors($validator)->withInput();
 			}
 			
+            $data = array(
+            'email' => $request->email,
+            'name' => $request->ctl_name,
+            'event' => $request->event_request,
+            'position' => $request->position_request,
+        );
+        
+         Mail::send('emails.eventsoconfirm', $data, function($message) use ($data){
+            $message->from('wguisbond@gmail.com');
+            $message->to($data['email'], 'ec@zhuartcc.org');
+            $message->subject('Event Sign-Up Confirmation');
+        });
+            
 			$insert_id = Module::insert("Event_Requests", $request);
 			
 			return redirect()->route(config('laraadmin.adminRoute') . '.event_requests.index');
@@ -175,6 +189,7 @@ class Event_RequestsController extends Controller
 				return redirect()->back()->withErrors($validator)->withInput();;
 			}
 			
+            
 			$insert_id = Module::updateRow("Event_Requests", $request, $id);
 			
 			return redirect()->route(config('laraadmin.adminRoute') . '.event_requests.index');

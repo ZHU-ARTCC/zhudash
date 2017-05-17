@@ -23,7 +23,7 @@ class DownloadsController extends Controller
 {
 	public $show_action = true;
 	public $view_col = 'f_name';
-	public $listing_cols = ['id', 'f_name', 'description', 'file_link', 'user_update', 'user_time'];
+	public $listing_cols = ['id', 'f_name', 'description', 'file_link', 'client', 'user_update', 'user_time'];
 	
 	public function __construct() {
 		// Field Access of Listing Columns

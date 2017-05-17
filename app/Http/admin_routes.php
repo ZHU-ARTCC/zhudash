@@ -65,24 +65,21 @@ Route::group(['as' => $as, 'middleware' => ['auth', 'permission:ADMIN_PANEL']], 
 	/* ================== Event_Requests ================== */
 	Route::resource(config('laraadmin.adminRoute') . '/event_requests', 'LA\Event_RequestsController');
 	Route::get(config('laraadmin.adminRoute') . '/event_request_dt_ajax', 'LA\Event_RequestsController@dtajax');
-
-
+    Route::post(config('laraadmin.adminRoute') . '/event_request_email', 'LA\Event_RequestsController@store');
 
 	/* ================== Training_Systems ================== */
 	Route::resource(config('laraadmin.adminRoute') . '/training_systems', 'LA\Training_SystemsController');
 	Route::get(config('laraadmin.adminRoute') . '/training_system_dt_ajax', 'LA\Training_SystemsController@dtajax');
-
+    Route::post(config('laraadmin.adminRoute') . '/training_system_pick', 'LA\Training_SystemsController@pick');
+    Route::post(config('laraadmin.adminRoute') . '/training_system_post_notify', 'LA\Training_SystemsController@postNotify');
 
 	/* ================== Downloads ================== */
 	Route::resource(config('laraadmin.adminRoute') . '/downloads', 'LA\DownloadsController');
 	Route::get(config('laraadmin.adminRoute') . '/download_dt_ajax', 'LA\DownloadsController@dtajax');
-
-
-
+    
 	/* ================== News ================== */
 	Route::resource(config('laraadmin.adminRoute') . '/news', 'LA\NewsController');
 	Route::get(config('laraadmin.adminRoute') . '/news_dt_ajax', 'LA\NewsController@dtajax');
-
 
 	/* ================== CBTs ================== */
 	Route::resource(config('laraadmin.adminRoute') . '/cbts', 'LA\CBTsController');
@@ -91,4 +88,13 @@ Route::group(['as' => $as, 'middleware' => ['auth', 'permission:ADMIN_PANEL']], 
 	/* ================== Updaters ================== */
 	Route::resource(config('laraadmin.adminRoute') . '/updaters', 'LA\UpdatersController');
 	Route::get(config('laraadmin.adminRoute') . '/updater_dt_ajax', 'LA\UpdatersController@dtajax');
+
+	/* ================== Sops ================== */
+	Route::resource(config('laraadmin.adminRoute') . '/sops', 'LA\SopsController');
+	Route::get(config('laraadmin.adminRoute') . '/sop_dt_ajax', 'LA\SopsController@dtajax');
+
+	/* ================== Positions ================== */
+	Route::resource(config('laraadmin.adminRoute') . '/positions', 'LA\PositionsController');
+	Route::get(config('laraadmin.adminRoute') . '/position_dt_ajax', 'LA\PositionsController@dtajax');
+
 });

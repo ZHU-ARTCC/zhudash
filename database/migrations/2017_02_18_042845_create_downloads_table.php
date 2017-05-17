@@ -21,6 +21,7 @@ class CreateDownloadsTable extends Migration
             ["f_name", "File Name", "String", false, "", 0, 256, true],
             ["description", "Description", "Textarea", false, "", 0, 0, true],
             ["file_link", "File Download Link", "URL", false, "", 0, 256, false],
+            ["client", "Client", "Dropdown", false, "", 0, 0, false, ["VRC","VSTARS","VERAM","MISC"]],
             ["user_update", "Updated By", "String", false, "", 0, 256, true],
             ["user_time", "Updated At", "Date", false, "", 0, 0, true],
         ]);

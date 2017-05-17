@@ -38,6 +38,7 @@
 					@la_input($module, 'position_request')
 					@la_input($module, 'comments')
 					--}}
+                
                     <br>
 					<div class="form-group">
 						{!! Form::submit( 'Update', ['class'=>'btn btn-success']) !!} <button class="btn btn-default pull-right"><a href="{{ url(config('laraadmin.adminRoute') . '/event_requests') }}">Cancel</a></button>

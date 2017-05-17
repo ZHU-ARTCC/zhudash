@@ -13,7 +13,7 @@ body {
 
 /* Titles */
 h1, h2, h3, h4, h5, h6 {
-    font-family: "Montserrat";
+    font-family: "Futura";
     font-weight: 300;
     color: #333;
 }
@@ -72,7 +72,6 @@ a:after {
    ========================================================================== */
 
 #headerwrap {
-	background-image: url("http://www.setty.com/admin/upload/imagefile/Washington%20Dulles%20International%20Airport%20(IAD)-ATC%20Tower.....jpg"); 
     /* https://sanfranciscoairport.regency.hyatt.com/content/dam/PropertyWebsites/regency/sfobu/Media/All/Hyatt-Regency-San-Francisco-Airport-P043-SFO-View.masthead-feature-panel-medium.jpg */
 	padding-top: 60px;
     background-repeat: no-repeat;
