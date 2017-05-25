@@ -236,16 +236,28 @@ class Training_SystemsController extends Controller
 	 */
 	public function destroy($id)
 	{
-		if(Module::hasAccess("Training_Systems", "delete")) {
-			Training_System::find($id)->delete();
+		
+			Training_system::find($id)->delete();
 			
 			// Redirecting to index() method
 			return redirect()->route(config('laraadmin.adminRoute') . '.training_systems.index');
-		} else {
 			return redirect(config('laraadmin.adminRoute')."/");
-		}
+		
 	}
 	
+    public function finalize($id)
+	{
+		
+			$sess =Training_system::where('id',$id)->first();
+        
+            if ($sess != null) {
+            $sess->delete();
+           return redirect()->route(config('laraadmin.adminRoute') . '.training_systems.index');
+			return redirect(config('laraadmin.adminRoute')."/");
+    }
+		
+	}
+    
 	/**
 	 * Datatable Ajax fetch
 	 *

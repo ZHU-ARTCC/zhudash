@@ -35,9 +35,121 @@
     <script src="{{ asset('/la-assets/js/smoothscroll.js') }}"></script>
 
     <style>
-        .sub{
-            color: #C03A2B;
+        
+        .rtd{
+            width: 5%;
+            border: 1px solid #fff;
         }
+        
+        .name{
+            a:hover{
+                color: #000;
+            }
+        }
+        
+        .otd{
+
+            width: 5%;
+        }
+        
+        .Solo{
+            background-color: #F0AD4E;
+        }
+        
+        .Minor{
+            background-color: #337AB7;
+        }
+        
+        .Major{
+            background-color: #5CB85C;
+        }
+        
+        .Cert{
+                background-color: #5CB85C;
+        }
+        
+        .None{
+            background-color: #DDD;
+        }
+        
+        .OBS{
+            background-color: #808080;
+            padding: 2px;
+            color: #fff;
+        }
+        
+        .S1{
+            background-color: #F0AD4E;
+            padding: 2px;
+            color: #fff;
+        }
+        
+        .S2{
+            background-color: #F0AD4E;
+            padding: 2px;
+            color: #fff;
+        }
+        
+        .S3{
+            background-color: #F0AD4E;
+            padding: 2px;
+            color: #fff;
+        }
+        
+        .C1{
+            background-color: #5CB85C;
+            padding: 2px;
+            color: #fff; 
+        }
+        
+        .C3{
+            background-color: #02C66C;
+            padding: 2px;
+            color: #fff; 
+        }
+        
+        .I1{
+            background-color: #D9534F;
+            padding: 2px;
+            color: #fff;
+        }
+        
+        .I3{
+            background-color: #D9534F;
+            padding: 2px;
+            color: #fff;
+        }
+        
+        .SUP{
+            background-color: #663399;
+            padding: 2px;
+            color: #fff;
+        }
+        
+        .keyth{
+            width: 25%;
+            color: #fff;
+        }
+        /* unvisited link */
+a:link {
+    color: #555555;
+}
+
+/* visited link */
+a:visited {
+    color: #555555;
+}
+
+/* mouse over link */
+a:hover {
+    color: #555555;
+}
+
+/* selected link */
+a:active {
+    color: #555555;
+}
+
     </style>
 
 </head>
@@ -46,43 +158,20 @@
 
 @include('header')
 
+
+<section id="home" name="home"></section>
+
 <section id="about" name="about"></section>
 <!-- INTRO WRAP -->
 <div id="intro">
     <div class="container">
-        <div>
-            <h1 style="text-align: center;">Upcoming Events:</h1>
-            <br>
-            <ul>
-            <?php    
-             $events = DB::table('events')->where('active','=', 'Yes')->get();
-
-               foreach($events as $event) {
-                
-                echo "<h3>$event->event_name</h3><br>";
-                echo "<img src=\"$event->banner\" width=\"100%\"><br><br>";
-                echo "<p>$event->description</p>";
-                if (Auth::user() ){
-                echo "<h4>Available Positions:</h4>";
-                echo nl2br($event->positions) ;
-                echo "<br><br>";
-                echo $event->lineup;
-                }
-                echo '<br><hr><br>';  
-               }
-                ?>  
-                @if (Auth::guest())
-                <br>
-                @else
-                <a class="btn-new" href="/admin/event_requests">Controller Sign Up (All Events)</a>
-                @endif
-                
-               
-            </ul>
-
-    </div> <!--/ .container -->
-</div><!--/ #introwrap -->
-
+        <div>    
+            <table class="table">
+            
+            </table>
+        </div> <!--/ .container -->
+    </div><!--/ #introwrap -->
+</div>
 <!-- FEATURES WRAP -->
 <div id="features">
     <div class="container">

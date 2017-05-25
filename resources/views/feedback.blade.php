@@ -48,11 +48,6 @@
 @include('header')
     
 <section id="home" name="home"></section>
-<div>
-      <img src="http://i.imgur.com/fZqZJuJ.jpg" width="100%" alt="1">
-</div><!--/ #headerwrap -->
-
-
     
 <section id="about" name="about"></section>
 <!-- INTRO WRAP -->

@@ -34,11 +34,6 @@
     <script src="{{ asset('/la-assets/plugins/jQuery/jQuery-2.1.4.min.js') }}"></script>
     <script src="{{ asset('/la-assets/js/smoothscroll.js') }}"></script>
 
-    <style>
-        .sub{
-            color: #C03A2B;
-        }
-    </style>
 
 </head>
 
@@ -46,41 +41,23 @@
 
 @include('header')
 
+<section id="home" name="home"></section>
+
 <section id="about" name="about"></section>
 <!-- INTRO WRAP -->
 <div id="intro">
     <div class="container">
-        <div>
-            <h1 style="text-align: center;">Upcoming Events:</h1>
-            <br>
-            <ul>
-            <?php    
-             $events = DB::table('events')->where('active','=', 'Yes')->get();
+        <div class="panel panel-default">        
+            <div class="panel-body">
+                <img src="http://i1268.photobucket.com/albums/jj580/wguisbond/unspecified_zpsux38ulne.png" width="100%"><br><br>
+                <p>   
+               Welcome to the Virtual Houston Air Route Traffic Control Center on the VATSIM Network. As a member of the VATSIM network, the Houston ARTCC provides virtual air traffic control services within it's delegated airspace. Priding ourself on fun airspace for both pilots and controllers, the Houston ARTCC has something for everyone. Striving to provide the best training, student and staff programs out there, we hope you will join our ranks as a controller, or come fly as a pilot.<br><br>
 
-               foreach($events as $event) {
-                
-                echo "<h3>$event->event_name</h3><br>";
-                echo "<img src=\"$event->banner\" width=\"100%\"><br><br>";
-                echo "<p>$event->description</p>";
-                if (Auth::user() ){
-                echo "<h4>Available Positions:</h4>";
-                echo nl2br($event->positions) ;
-                echo "<br><br>";
-                echo $event->lineup;
-                }
-                echo '<br><hr><br>';  
-               }
-                ?>  
-                @if (Auth::guest())
-                <br>
-                @else
-                <a class="btn-new" href="/admin/event_requests">Controller Sign Up (All Events)</a>
-                @endif
-                
-               
-            </ul>
+               Encompassing an airspace of approximately 280,000 square miles located in portions of Texas, Louisiana, Mississippi and Alabama, Houston has a diverse selection of destinations for you to choose from. From New Orleans, to the airports of Houston, Austin, San Antonio and many other cities along the Gulf of Mexico we know you will find a destination to your liking within our airspace. In addition we operate the Houston Oceanic Station covering the Gulf of Mexico and providing services to pilots transitioning this body of water. We hope you will enjoy your visit and come back and see us again soon.
 
-    </div> <!--/ .container -->
+                </p>
+            </div>
+        </div> <!--/ .container -->
 </div><!--/ #introwrap -->
 
 <!-- FEATURES WRAP -->

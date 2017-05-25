@@ -8,6 +8,8 @@
 </style>
 
 
+<link rel="shortcut icon" href="www.zhuartcc.org/favicon.ico" type="image/x-icon">
+
 <link href="{{ asset('/la-assets/css/bootstrap.css') }}" rel="stylesheet">
 
 <link href="{{ asset('/la-assets/css/main.css') }}" rel="stylesheet">
@@ -36,9 +38,9 @@
         <li class="dropdown">
           <a href="#" style=" color: #555555; background-color: #F2F2F2; border-color: #204d74;" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Home<span class="caret"></span></a>
           <ul style="background-color: #fff;" class="dropdown-menu">
-            <li><a href="#">About ZHU</a></li>
+            <li><a href="/about">About ZHU</a></li>
             <li><a href="/staff">ARTCC Management</a></li>
-            <li><a href="#">Facebook</a></li>
+            <li><a href="https://www.facebook.com/virtualZHU/?ref=br_rs">Facebook</a></li>
             <li><a href="/events">Events</a></li>
             <li><a href="/visit">Visiting Application</a></li>
           </ul>
@@ -48,7 +50,7 @@
           <ul style="background-color: #fff;" class="dropdown-menu">
             <li><a href="/sops">SOP's/LOA's</a></li>
             <li><a href="/downloads">Downloads</a></li>
-            <li><a href="#">Training Wiki</a></li>
+            <!-- <li><a href="#">Training Wiki</a></li> -->
             <li><a href="/positions">ARTCC Positions</a></li>
             <li><a href="/roster">Roster</a></li>
           </ul>
@@ -56,9 +58,9 @@
         <li class="dropdown">
           <a href="#" style=" color: #555555; background-color: #F2F2F2; border-color: #204d74;" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pilots<span class="caret"></span></a>
           <ul style="background-color: #fff;" class="dropdown-menu">
-            <li><a href="#">Charts</a></li>
-            <li><a href="#">Weather Details</a></li>
-            <li><a href="#">Useful Resources</a></li>
+            <li><a href="https://www.airnav.com/">Charts</a></li>
+            <li><a href="http://www.weather.gov/">Weather Details</a></li>
+            <!-- <li><a href="#">Useful Resources</a></li> -->
 
           </ul>
         </li>
@@ -77,3 +79,6 @@
         
     </div>
 </div>  
+<div>
+    <img src="http://i1268.photobucket.com/albums/jj580/wguisbond/rect5760_zps2u9lkpv2.png" width="100%" alt="1">
+</div><!--/ #headerwrap -->

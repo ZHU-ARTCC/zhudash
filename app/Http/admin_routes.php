@@ -31,7 +31,9 @@ Route::group(['as' => $as, 'middleware' => ['auth', 'permission:ADMIN_PANEL']], 
 	/* ================== Users ================== */
 	Route::resource(config('laraadmin.adminRoute') . '/users', 'LA\UsersController');
 	Route::get(config('laraadmin.adminRoute') . '/user_dt_ajax', 'LA\UsersController@dtajax');
-	
+    
+    /* ================== User Updaters ================== */
+	Route::post(config('laraadmin.adminRoute') . '/user_update', 'Role_userController@store');
 	
 	/* ================== Roles ================== */
 	Route::resource(config('laraadmin.adminRoute') . '/roles', 'LA\RolesController');
@@ -72,6 +74,7 @@ Route::group(['as' => $as, 'middleware' => ['auth', 'permission:ADMIN_PANEL']], 
 	Route::get(config('laraadmin.adminRoute') . '/training_system_dt_ajax', 'LA\Training_SystemsController@dtajax');
     Route::post(config('laraadmin.adminRoute') . '/training_system_pick', 'LA\Training_SystemsController@pick');
     Route::post(config('laraadmin.adminRoute') . '/training_system_post_notify', 'LA\Training_SystemsController@postNotify');
+    Route::get(config('laraadmin.adminRoute') . '/training_system_final', 'LA\Training_SystemsController@finalize');
 
 	/* ================== Downloads ================== */
 	Route::resource(config('laraadmin.adminRoute') . '/downloads', 'LA\DownloadsController');

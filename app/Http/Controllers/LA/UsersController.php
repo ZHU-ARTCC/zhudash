@@ -25,7 +25,7 @@ class UsersController extends Controller
 	public $show_action = true;
 	public $view_col = 'name';
 	public $listing_cols = ['id', 'name', 'email', 'password', 'type', 'status', 'cid', 'role'];
-	
+
 	public function __construct() {
 		// Field Access of Listing Columns
 		if(\Dwij\Laraadmin\Helpers\LAHelper::laravel_ver() == 5.3) {
@@ -97,6 +97,8 @@ class UsersController extends Controller
             $message->to($data['email']);
             $message->subject('Welcome to the Houston ARTCC!');
         });
+            
+            
 			
 			$insert_id = Module::insert("Users", $request);
 			

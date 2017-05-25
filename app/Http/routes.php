@@ -63,11 +63,20 @@ Route::get('/feedback', function () {
     return view('feedback');
 });
 
+Route::get('/about', function () {
+    return view('about');
+});
+
 // Visiting Application
 Route::post('/visitapp', 'VisitController@store');
 
 // Pilot Feedback
 Route::post('/pfeed', 'FeedbackController@store');
+
+/* Profiles
+Route::get('/roster/{cid}', function ($cid) {
+    return view('profile');
+}); */
 
 //Password Resets
 Route::get('password/reset/{token?}', 'Auth\PasswordController@showResetForm');

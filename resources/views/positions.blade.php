@@ -53,12 +53,6 @@
 
 
 <section id="home" name="home"></section>
-<div id="headerwrap" style="background-image: url('http://i1268.photobucket.com/albums/jj580/wguisbond/bg1_zps8xlppt0s.png');">
-    <div class="container">
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-    </div> <!--/ .container -->
-</div><!--/ #headerwrap -->
-
 
 <section id="about" name="about"></section>
 <!-- INTRO WRAP -->

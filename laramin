@@ -1,0 +1,86 @@
+-- phpMyAdmin SQL Dump
+-- version 4.6.5.2
+-- https://www.phpmyadmin.net/
+--
+-- Host: localhost:8889
+-- Generation Time: May 21, 2017 at 04:30 AM
+-- Server version: 5.6.34
+-- PHP Version: 7.1.0
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+--
+-- Database: `laramin`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE `users` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `name` varchar(250) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `email` varchar(250) COLLATE utf8_unicode_ci NOT NULL,
+  `password` varchar(250) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'password',
+  `type` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'CON',
+  `remember_token` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `status` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'A',
+  `cid` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  `role` int(10) UNSIGNED NOT NULL DEFAULT '1',
+  `gnd` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'none',
+  `twr` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'none',
+  `app` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'none',
+  `ctr` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'none',
+  `oce` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'none',
+  `rating` varchar(255) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'OBS',
+  `oi` text COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `name`, `email`, `password`, `type`, `remember_token`, `deleted_at`, `created_at`, `updated_at`, `status`, `cid`, `role`, `gnd`, `twr`, `app`, `ctr`, `oce`, `rating`, `oi`) VALUES
+(1, 'Will Guisbond', 'wguisbond@gmail.com', '$2y$10$EUyI7EDVqQCAURwMPEurCuNo/FqK1RxxQh5xkNcgpUPCgqDsRyKw6', 'INS', 'tikKPHXVIXJo6PtAD3BPrK79bul69isKu26nAhhRXSzTuckxxfaq63t3ZI9y', NULL, '2017-02-13 21:04:38', '2017-05-21 05:58:38', 'V', 1350891, 1, 'Major', 'Major', 'Major', 'Solo', 'None', 'S3', 'GD'),
+(2, 'Brandon Barrett', 'zhu.bbarrett@gmail.com', '$2y$10$mNZcuXylqIgayJ2BRZQzX.oXJ6UYRSBoVcw6T/cPPyS8s4N5lNH62', 'ATM', 'bM4Mmw57rIrCrlzw43ADsV6wlOcn6wPwEIv7LSVzZCZb0p7yrLBwOkisySDD', NULL, '2017-02-13 21:04:38', '2017-05-15 01:12:08', 'V', 1181029, 6, 'Solo', 'Minor', 'Major', 'Solo', 'Cert', 'I1', 'BB'),
+(8, 'Test User', 'check@gmail.com', '$2y$10$oNZ9Pzbgz7xw.XrpqwzvCey./h/uUt0NvcZ6Cg.0k5HtCblXmOUbe', 'Controller', NULL, '2017-05-12 07:00:36', '2017-05-12 06:57:07', '2017-05-12 07:00:36', 'A', 1111111, 1, 'None', 'None', 'None', 'None', 'None', 'OBS', 'TT'),
+(9, 'Matthew Kosmoski', 'test@test.com', '$2y$10$X0j9isqjyfvC3kRUbQejBenRiQBB0gwjYdYYsuIkpQZvsE.LtcL2u', 'CON', 'J3wqrCaQ5ifuR83awx1twAwPfUjPsXZHD3EElCMBzw6G1q1S0K6GrdwhjR0E', NULL, '2017-05-17 04:09:03', '2017-05-17 06:06:13', 'A', 111111, 1, 'Major', 'Major', 'Major', 'Cert', 'Cert', 'I1', 'MK'),
+(10, 'test test ', 'test@test1.com', '$2y$10$muzK9IU6PrvYRAlOKj0X2uajOUsVIRUf3mFuYpdbfBuvSeA3RvR8G', 'CON', NULL, '2017-05-17 06:09:39', '2017-05-17 06:09:18', '2017-05-17 06:09:39', 'V', 11111113, 1, 'None', 'None', 'None', 'None', 'None', 'S2', 'TR'),
+(11, 'Tes Test', 'testet@test.org', '$2y$10$aSxVRO9vPb30./w9wQ5Vre5EcJY9w/tWbnvmH0kCYEN4jQwkxnpDW', 'CON', '2XpnWrGkHbXPGRnLIUlaIY0WB2fJuQv6zU7cSViCTJt3rO9BSymiA8P3UXDs', NULL, '2017-05-21 05:58:29', '2017-05-21 06:03:09', 'A', 1211111, 2, 'None', 'None', 'None', 'None', 'None', 'OBS', 'TE');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `users_email_unique` (`email`),
+  ADD KEY `users_role_foreign` (`role`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `users`
+--
+ALTER TABLE `users`
+  ADD CONSTRAINT `users_role_foreign` FOREIGN KEY (`role`) REFERENCES `roles` (`id`);
