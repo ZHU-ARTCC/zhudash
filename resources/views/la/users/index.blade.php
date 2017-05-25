@@ -24,6 +24,68 @@
     </div>
 @endif
 
+<div class="box box-success">
+    <div class="box-body">
+		<table id="example1" class="table table-bordered">
+		<thead>
+            <?php $controllers = DB::table('users')->orderBy('id', 'asc')->get(); ?>
+		<tr class="success">
+			{!! Form::open(['action' => 'Role_userController@store', 'id' => 'user_update', 'method' => 'POST']) !!}
+                User ID: <select class="form-control" name="user_id">
+                @foreach ($controllers as $controller){
+                    <option>{{$controller->id}}</option>
+                @endforeach
+                </select><br>
+                User Role ID: <select class="form-control" name="role_id">
+                    <option value="4">Inactive</option>
+                    <option value="2">Controller</option>
+                    <option value="3">Training Staff</option>
+                    <option value="5">Support Staff</option>
+                    <option value="6">Senior Staff</option>
+                </select>
+            <br>
+            {!! Form::submit( 'Submit', ['class'=>'btn btn-success']) !!}
+            {!! Form::close() !!}
+		</tr>
+		</thead>
+		<tbody>
+			
+		</tbody>
+		</table>
+	</div>
+</div>
+
+<?php $controllers = DB::table('users')->orderBy('name', 'asc')->get(); ?>
+<div class="box box-success">
+	<!--<div class="box-header"></div>-->
+	<div class="box-body">
+		<table id="example1" class="table table-bordered">
+            <tr style="color: #333333; background-color: #DFF0D8;">
+                <th>ID</th>
+                <th>Name</th>
+                <th>CID</th>
+                <th>Email</th>
+                <th>Role</th>
+                <th>Rating</th>
+                <th>OI</th>
+                <th>Actions</th>
+            </tr>
+		  @foreach ($controllers as $controller)
+            <tr>
+                <th>{{$controller->id}}</th>
+                <th>{{$controller->name}}</th>
+                <th>{{$controller->cid}}</th>
+                <th>{{$controller->email}}</th>
+                <th>{{$controller->type}}</th>
+                <th>{{$controller->rating}}</th>
+                <th>{{$controller->oi}}</th>
+                <th><a class="btn btn-success" href="users/{{$controller->id}}/edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a></th>
+            </tr>
+          @endforeach
+		</table>
+    </div></div><br><br>
+
+
 <!-- CID SSO
 <p>First, before adding a new user, use the search function below to grab basic information about them. Then, using this data, add the user to the roster and set their permissions.</p>
 
@@ -34,26 +96,6 @@
 
 -->
 
-<div class="box box-success">
-	<!--<div class="box-header"></div>-->
-	<div class="box-body">
-		<table id="example1" class="table table-bordered">
-		<thead>
-		<tr class="success">
-			@foreach( $listing_cols as $col )
-			<th>{{ $module->fields[$col]['label'] or ucfirst($col) }}</th>
-			@endforeach
-			@if($show_actions)
-			<th>Actions</th>
-			@endif
-		</tr>
-		</thead>
-		<tbody>
-			
-		</tbody>
-		</table>
-	</div>
-</div>
 
 @la_access("Users", "create")
 <div class="modal fade" id="AddModal" role="dialog" aria-labelledby="myModalLabel">

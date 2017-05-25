@@ -48,15 +48,6 @@
 @include('header')
     
 <section id="home" name="home"></section>
-<div>
-
-
-
-      <img src="http://i1268.photobucket.com/albums/jj580/wguisbond/bg3_zpsd90f6cbi.png" width="100%" alt="1">
-
-</div><!--/ #headerwrap -->
-
-
     
 <section id="about" name="about"></section>
 <!-- INTRO WRAP -->
@@ -66,23 +57,43 @@
             <div class="col-md-4">
                 <div class="panel panel-default">
                     <div class="panel-heading">Weather</div>
-                    <div class="panel-body">wx</div>
+                    <div class="panel-body"><br><br><br><br><br><br></div>
+                    <div class="panel-heading">Who's Online</div>
+                    <div class="panel-body"><br><br><br><br><br><br></div>
                 </div>
             </div> 
             <div class="col-md-8">
                 <div class="panel panel-default">
                     <div class="panel-heading">News</div>
-                    <div class="panel-body">nws</div>
+                    <div class="panel-body">
+                        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="item active">
+                                  <img src="http://i.imgur.com/9fcfqJy.jpg" alt="Los Angeles">
+                                </div>
+
+                                <div class="item">
+                                  <img src="http://i.imgur.com/fZqZJuJ.jpg" alt="New York">
+                                </div>
+                                
+                                <div class="item">
+                                  <img src="http://i1268.photobucket.com/albums/jj580/wguisbond/iah-fed-ex-md-10_27316_zpspgkxhrka.png" alt="New York">
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <?php
+                    $articles = DB::table('news')->where('public', '=', 'Yes')->latest()->limit(3)->get();
+                    
+                    foreach ($articles as $article){
+                        echo "<h4><b>$article->title</b></h4>";
+                        echo "<p>$article->body</p>";
+                        echo "<hr>";
+                    }
+                    ?>
+                    </div>
                 </div>
             </div>  
-        </div>
-        <div class="row"> 
-            <div class="col-md-4">
-                <div class="panel panel-default">
-                    <div class="panel-heading">Who's Online</div>
-                    <div class="panel-body">peeps</div>
-                </div>
-            </div> 
         </div>
     </div> <!--/ .container -->
 </div><!--/ #introwrap -->

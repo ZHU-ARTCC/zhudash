@@ -41,14 +41,8 @@
 
 @include('header')
 
-
 <section id="home" name="home"></section>
-<div >
-    <img src="http://i.imgur.com/7a1lbeC.jpg" width="100%" alt="1">
-</div><!--/ #headerwrap -->
 
-  
-    
 <section id="about" name="about"></section>
 <!-- INTRO WRAP -->
 <div id="intro">
@@ -169,14 +163,7 @@
 </div><!--/ #features -->
 
 
-<div id="c">
-    <div class="container">
-        <p>
-            The information contained on all pages of this website is to be used for flight simulation purposes only on the VATSIM network. It is not intended nor should it be used for real world navigation.This site is not affiliated with the FAA, the actual Washington Center or any governing aviation body. All content contained herein is approved only for use on the VATSIM network. ©2016 Virtual Washington ARTCC -- Source Code © 2016-2017 W. Guisbond and R. Rump.
-        </p>
-    </div>
-</div>
-
+@include('footer')
 
 <!-- Bootstrap core JavaScript
 ================================================== -->

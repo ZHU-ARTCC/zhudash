@@ -108,6 +108,8 @@
     </div>
 </div>
 
+
+
 <!-- Div containing unbooked sessions for ins/mtr to see -->
 <div class="box box-success">
     <div class="box-body">
@@ -121,7 +123,6 @@
                 <th>Position</th>
                 <th>Action</th>
             </tr>
-            
             <?php 
                 $unbooked = DB::table('training_systems')->where('mtr_name', '=','0')->get();
                 foreach ($unbooked as $pickup){
@@ -151,11 +152,13 @@
                 }
                 
                 ?>
-            
+
             
         </table>
     </div>
 </div>
+
+
 
 <!-- Div containing schedule for ins/mtr based on booked sessions -->
 <div class="box box-success">
@@ -167,7 +170,7 @@
                 <th>Date</th>
                 <th>Time</th>
                 <th>Position</th>
-                <!-- <th>Action</th> -->
+                <th>Action</th>
             </tr>
             
             <?php 
@@ -178,15 +181,44 @@
                     echo "<th>$totrain->idate</th>";
                     echo "<th>$totrain->timestartblock to $totrain->timeendblock</th>";
                     echo "<th>$totrain->airport $totrain->position</th>";
+                    
+                    ?>
+                <th><button type="button" class="btn btn-success" data-toggle="modal" data-target="#myModal">Finalize or Cancel</button></th>
+                    <?php
                     echo "</tr>";
                 }
                 
                 ?>
             
-            
         </table>
     </div>
 </div>
+
+<!-- Notes Modal -->
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Confirmation: What would you like to do?</h4>
+      </div>
+      <div class="modal-body">   
+          <p>Here, you can either finalize and complete a session or cancel it. By finalizing the session, you are relaesing it to the student. It is no longer in the system as an uncompleted session. <b>Remember: you will not be able to submit a session report once you have released a session, so submit your report BEFORE you release.</b> If you are no longer able to do this session with your student, click the cancel button to send them an email. <b>It is always a good idea to coordinate with your student before cancelling, even though they will receive this email. </b></p>
+     
+            
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
 
 <!-- Records -->
 <div class="box box-success">

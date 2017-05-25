@@ -41,6 +41,15 @@
     succesfully been added to the roster by one of our staff members. Below, you will find some basic information about general operations
     as a new controller in the ARTCC, as well as instructions as to how to get started in our training department. 
     
+    First, you will need to log into the website to enable several functions including event sign up, training system access, etc. Your initial information for your account is as follows:<br><br>
+    
+    Username(email): {{$email}}<br>
+    Password: {{$passph}}<br><br>
+    
+    The above password is temporary. It is strongly reccomended that you reset this password via the "reset password" link on the login page. The safety, security and privacy or your account is your own responsibility. NEVER share your password with someone else. 
+    
+    
+    
     <!-- Welcome letter -->
     
 </div>

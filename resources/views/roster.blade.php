@@ -41,6 +41,12 @@
             border: 1px solid #fff;
         }
         
+        .name{
+            a:hover{
+                color: #000;
+            }
+        }
+        
         .otd{
 
             width: 5%;
@@ -91,7 +97,7 @@
         }
         
         .C1{
-            background-color: #02C66C;
+            background-color: #5CB85C;
             padding: 2px;
             color: #fff; 
         }
@@ -124,6 +130,25 @@
             width: 25%;
             color: #fff;
         }
+        /* unvisited link */
+a:link {
+    color: #555555;
+}
+
+/* visited link */
+a:visited {
+    color: #555555;
+}
+
+/* mouse over link */
+a:hover {
+    color: #555555;
+}
+
+/* selected link */
+a:active {
+    color: #555555;
+}
 
     </style>
 
@@ -135,24 +160,18 @@
 
 
 <section id="home" name="home"></section>
-<div id="headerwrap" style="background-image: url('http://i1268.photobucket.com/albums/jj580/wguisbond/bg1_zps8xlppt0s.png');">
-    <div class="container">
-        <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-    </div> <!--/ .container -->
-</div><!--/ #headerwrap -->
-
 
 <section id="about" name="about"></section>
 <!-- INTRO WRAP -->
 <div id="intro">
     <div class="container">
         <div>
-            <h1 style="text-align: center;">Controlling Roster</h1><br>
+            <h2 style="text-align: center;">Controlling Roster</h2><br>
             <table class="table">
                 <tr><th class="keyth None"><center>None</center></th><th class="keyth Solo"><center>Solo Cert</center></th><th class="keyth Minor"><center>Non-Major</center></th><th class="keyth Major"><center>Fully Certified</center></th></tr>
             </table><br>
             <?php    
-                $controllers = DB::table('users')->get();
+                $controllers = DB::table('users')->where('status', '=', 'A')->orderBy('name', 'asc')->get();
                 
             ?>
                 <table class="table">
@@ -181,8 +200,43 @@
                         echo "<th class='rtd $controller->oce'></th>";
                     echo "</tr>";
                 }
+                echo "</table>";
             ?>
-                </table>
+                    <br><br><br>
+                    <!-- Visitors -->
+                    <h2 style="text-align: center;">Visiting Roster</h2><br>
+            <?php    
+                $controllers = DB::table('users')->where('status', '=', 'V')->orderBy('name', 'asc')->get();
+            ?>
+                <table class="table">
+                    <tr style="color: #555555;">
+                        <th class="filler"></th>
+                        <th class="filler"></th>
+                        <th class="filler"></th>
+                        <th class="filler"></th>
+                        <th>GND</th>
+                        <th>TWR</th>
+                        <th>APP</th>
+                        <th>CTR</th>
+                        <th>OCE</th>
+                    </tr>
+            <?php
+                foreach ($controllers as $controller){
+                    echo "<tr>";
+                        echo "<th>$controller->name</th>";
+                        echo "<th>$controller->oi</th>";
+                        echo "<th class='otd $controller->rating' ><center><span class=\" $controller->rating\">$controller->rating</span><center></th>";
+                        echo "<th class='otd $controller->type'></th>";
+                        echo "<th class='rtd $controller->gnd'></th>";
+                        echo "<th class='rtd $controller->twr'></th>";
+                        echo "<th class='rtd $controller->app'></th>";
+                        echo "<th class='rtd $controller->ctr'></th>";
+                        echo "<th class='rtd $controller->oce'></th>";
+                    echo "</tr>";
+                }
+                echo "</table>";
+            ?>
+                
 
     </div> <!--/ .container -->
 </div><!--/ #introwrap -->

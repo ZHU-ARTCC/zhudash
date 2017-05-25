@@ -43,18 +43,6 @@
 
 
 <section id="home" name="home"></section>
-<div id="headerwrap">
-    <div class="container">
-        <div class="row centered">
-            <div style="padding-right: 250px;"class="col-lg-12">
-                <h1>{{ LAConfigs::getByKey('sitename_part1') }} <b><a>{{ LAConfigs::getByKey('sitename_part2') }}</a></b></h1>
-                <h3>ATC Downloads</h3>
-                <br><br><br><br><br><br>
-            </div>
-        </div>
-    </div> <!--/ .container -->
-</div><!--/ #headerwrap -->
-
 
 <section id="about" name="about"></section>
 <!-- INTRO WRAP -->
