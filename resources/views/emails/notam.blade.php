@@ -29,7 +29,7 @@
 
 <center>
     <div class="col-md-8 title-info">
-        <img src="http://i1268.photobucket.com/albums/jj580/wguisbond/unspecified_zpsux38ulne.png" width="90%">
+        <img src="//i1268.photobucket.com/albums/jj580/wguisbond/unspecified_zpsux38ulne.png" width="90%">
         <h1 class="subject-header">{{$title}}</h1>
     </div>
 </center>

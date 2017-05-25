@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-<body class="hold-transition login-page" style="background-image: url('http://i1268.photobucket.com/albums/jj580/wguisbond/vlad-busuioc-116873%201_zpsodr7edcu.jpg')">
+<body class="hold-transition login-page" style="background-image: url('//i1268.photobucket.com/albums/jj580/wguisbond/vlad-busuioc-116873%201_zpsodr7edcu.jpg')">
     <div class="login-box">
         <div class="login-logo">
             <a href="{{ url('/home') }}"><b>{{ LAConfigs::getByKey('sitename_part1') }} </b>{{ LAConfigs::getByKey('sitename_part2') }}</a>
