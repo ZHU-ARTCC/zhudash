@@ -10,9 +10,9 @@
     <meta property="og:type" content="website" />
     <meta property="og:description" content="{{ LAConfigs::getByKey('site_description') }}" />
     
-    <meta property="og:url" content="http://laraadmin.com/" />
+    <meta property="og:url" content="//laraadmin.com/" />
     <meta property="og:sitename" content="laraAdmin" />
-	<meta property="og:image" content="http://demo.adminlte.acacha.org/img/LaraAdmin-600x600.jpg" />
+	<meta property="og:image" content="//demo.adminlte.acacha.org/img/LaraAdmin-600x600.jpg" />
     
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@laraadmin" />

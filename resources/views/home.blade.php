@@ -10,9 +10,9 @@
     <meta property="og:type" content="website" />
     <meta property="og:description" content="{{ LAConfigs::getByKey('site_description') }}" />
     
-    <meta property="og:url" content="http://laraadmin.com/" />
+    <meta property="og:url" content="//laraadmin.com/" />
     <meta property="og:sitename" content="laraAdmin" />
-	<meta property="og:image" content="http://demo.adminlte.acacha.org/img/LaraAdmin-600x600.jpg" />
+	<meta property="og:image" content="//demo.adminlte.acacha.org/img/LaraAdmin-600x600.jpg" />
     
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@laraadmin" />
@@ -69,15 +69,15 @@
                         <div id="myCarousel" class="carousel slide" data-ride="carousel">
                             <div class="carousel-inner">
                                 <div class="item active">
-                                  <img src="http://i.imgur.com/9fcfqJy.jpg" alt="Los Angeles">
+                                  <img src="//i.imgur.com/9fcfqJy.jpg" alt="Los Angeles">
                                 </div>
 
                                 <div class="item">
-                                  <img src="http://i.imgur.com/fZqZJuJ.jpg" alt="New York">
+                                  <img src="//i.imgur.com/fZqZJuJ.jpg" alt="New York">
                                 </div>
                                 
                                 <div class="item">
-                                  <img src="http://i1268.photobucket.com/albums/jj580/wguisbond/iah-fed-ex-md-10_27316_zpspgkxhrka.png" alt="New York">
+                                  <img src="//i1268.photobucket.com/albums/jj580/wguisbond/iah-fed-ex-md-10_27316_zpspgkxhrka.png" alt="New York">
                                 </div>
                             </div>
                         </div>

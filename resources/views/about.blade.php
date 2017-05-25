@@ -10,9 +10,9 @@
     <meta property="og:type" content="website" />
     <meta property="og:description" content="{{ LAConfigs::getByKey('site_description') }}" />
     
-    <meta property="og:url" content="http://laraadmin.com/" />
+    <meta property="og:url" content="//laraadmin.com/" />
     <meta property="og:sitename" content="laraAdmin" />
-	<meta property="og:image" content="http://demo.adminlte.acacha.org/img/LaraAdmin-600x600.jpg" />
+	<meta property="og:image" content="//demo.adminlte.acacha.org/img/LaraAdmin-600x600.jpg" />
     
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@laraadmin" />
@@ -49,7 +49,7 @@
     <div class="container">
         <div class="panel panel-default">        
             <div class="panel-body">
-                <img src="http://i1268.photobucket.com/albums/jj580/wguisbond/unspecified_zpsux38ulne.png" width="100%"><br><br>
+                <img src="//i1268.photobucket.com/albums/jj580/wguisbond/unspecified_zpsux38ulne.png" width="100%"><br><br>
                 <p>   
                Welcome to the Virtual Houston Air Route Traffic Control Center on the VATSIM Network. As a member of the VATSIM network, the Houston ARTCC provides virtual air traffic control services within it's delegated airspace. Priding ourself on fun airspace for both pilots and controllers, the Houston ARTCC has something for everyone. Striving to provide the best training, student and staff programs out there, we hope you will join our ranks as a controller, or come fly as a pilot.<br><br>
 

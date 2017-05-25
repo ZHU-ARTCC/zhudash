@@ -59,7 +59,7 @@
           <a href="#" style=" color: #555555; background-color: #F2F2F2; border-color: #204d74;" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Pilots<span class="caret"></span></a>
           <ul style="background-color: #fff;" class="dropdown-menu">
             <li><a href="https://www.airnav.com/">Charts</a></li>
-            <li><a href="http://www.weather.gov/">Weather Details</a></li>
+            <li><a href="//www.weather.gov/">Weather Details</a></li>
             <!-- <li><a href="#">Useful Resources</a></li> -->
 
           </ul>
@@ -80,5 +80,5 @@
     </div>
 </div>  
 <div>
-    <img src="http://i1268.photobucket.com/albums/jj580/wguisbond/rect5760_zps2u9lkpv2.png" width="100%" alt="1">
+    <img src="//i1268.photobucket.com/albums/jj580/wguisbond/rect5760_zps2u9lkpv2.png" width="100%" alt="1">
 </div><!--/ #headerwrap -->
